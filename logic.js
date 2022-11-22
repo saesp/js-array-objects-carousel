@@ -4,7 +4,6 @@
 // Come nel primo carosello realizzato, focalizziamoci prima sulla creazione del markup statico: costruiamo il container e inseriamo l’immagine grande in modo da poter stilare lo slider
 // Milestone 1:
 // Ora rimuoviamo i contenuti statici e usiamo l’array di oggetti letterali per popolare dinamicamente il carosello
-
 // Al click dell’utente sulle frecce, l’immagine attiva diventerà visibile e dovremo aggiungervi titolo e testo
 // Milestone 2:
 // Aggiungere il **ciclo infinito** del carosello. Ovvero se l’img attiva è la prima e l’utente clicca la freccia prev, l’img che deve attivarsi sarà l’ultima e viceversa per l’ultima img se l’utente clicca la freccia next
@@ -43,8 +42,11 @@ images.forEach((img, i) => {
     contCaros.innerHTML += `
     <div class="cont-img">
         <img src="${img.image}">
-        <h2>${img.title}</h2>
-        <p>${img.text}</p>
+        <div class="cont-text">
+            <h2>${img.title}</h2>
+            <p>${img.text}</p>
+        </div>
+        
     </div>`
 });
 
