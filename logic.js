@@ -2,9 +2,9 @@
 // Creare un carosello come nella foto allegata.
 // Milestone 0:
 // Come nel primo carosello realizzato, focalizziamoci prima sulla creazione del markup statico: costruiamo il container e inseriamo l’immagine grande in modo da poter stilare lo slider
-
 // Milestone 1:
 // Ora rimuoviamo i contenuti statici e usiamo l’array di oggetti letterali per popolare dinamicamente il carosello
+
 // Al click dell’utente sulle frecce, l’immagine attiva diventerà visibile e dovremo aggiungervi titolo e testo
 // Milestone 2:
 // Aggiungere il **ciclo infinito** del carosello. Ovvero se l’img attiva è la prima e l’utente clicca la freccia prev, l’img che deve attivarsi sarà l’ultima e viceversa per l’ultima img se l’utente clicca la freccia next
@@ -43,10 +43,43 @@ images.forEach((img, i) => {
     contCaros.innerHTML += `
     <div class="cont-img">
         <img src="${img.image}">
-        <h3>${img.title}</h3>
+        <h2>${img.title}</h2>
         <p>${img.text}</p>
     </div>`
 });
+
+
+
+let active = 0;
+document.getElementsByClassName('cont-img')[active].classList.add('active');
+
+const contImg = document.getElementsByClassName('cont-img');
+const butUp = document.querySelector(".but-up");
+
+butUp.addEventListener("click", 
+    function(){
+        
+        if (active < images.length -1){
+            contImg[active].classList.remove("active");
+            active++;
+            contImg[active].classList.add("active");
+        }
+    }
+)
+
+const butDown = document.querySelector(".but-down");
+butDown.addEventListener("click", function(){
+    
+    if (active < images.length && active !== 0){
+        contImg[active].classList.remove("active");
+        active--;
+        contImg[active].classList.add("active");
+    }
+})
+
+
+
+
 
 
 

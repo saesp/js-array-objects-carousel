@@ -1,5 +1,6 @@
 .container{
     padding: 50px;
+    color: white;
 }
 
 .cont-caros{
@@ -13,21 +14,34 @@
 }
 
 .cont-caros .but-up{
+    position: absolute;
     top: 25px;
     left: 50%;
 }
-
 .cont-caros .but-down{
+    position: absolute;
     bottom: 0;
     left: 50%;
 }
 
 .cont-img{
-    /* display: none; */
+    display: none;
 }
 
 .cont-img.active{
-    display: inline-block;
+    display: flex;
+    justify-content: center;
+}
+h2{
+
+}
+h2, p{
+    right: 40vh;
+    position: absolute;
+    bottom: 60px;
+}
+p{
+    bottom: 40px;
 }
 
 button{
