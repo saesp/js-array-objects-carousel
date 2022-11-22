@@ -63,6 +63,11 @@ butUp.addEventListener("click",
             contImg[active].classList.remove("active");
             active++;
             contImg[active].classList.add("active");
+
+        } else {
+            // ciclo infinito
+            contImg[active].classList.remove("active");
+            contImg[active=0].classList.add("active");
         }
     }
 )
@@ -70,7 +75,12 @@ butUp.addEventListener("click",
 const butDown = document.querySelector(".but-down");
 butDown.addEventListener("click", function(){
     
-    if (active < images.length && active !== 0){
+    if (active == 0) { 
+        // ciclo infinito
+        contImg[active].classList.remove("active");
+        contImg[active=images.length - 1].classList.add("active");
+        
+    } else if (active < images.length){
         contImg[active].classList.remove("active");
         active--;
         contImg[active].classList.add("active");
@@ -80,15 +90,6 @@ butDown.addEventListener("click", function(){
 
 
 
-
-
-
-
-
-
-
-
-// Al click dell’utente sulle frecce, l’immagine attiva diventerà visibile e dovremo aggiungervi titolo e testo
 
 
 
