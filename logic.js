@@ -10,7 +10,7 @@
 
 
 
-// arraey img
+// Creare array img
 const images = [ 
     { 
         image: 'img/01.webp', title: 'Marvel\'s Spiderman Miles Morale', text: 'Experience the rise of Miles Morales as the new hero masters incredible, explosive new powers to become his own Spider-Man.'
@@ -29,7 +29,9 @@ const images = [
     } 
 ];
 
-// usiamo l’array di oggetti letterali per popolare dinamicamente il carosello
+
+
+// Usare l’array di oggetti letterali per popolare dinamicamente il carosello
 const contCaros = document.querySelector(".cont-caros");
 
 images.forEach((img, i) => {
@@ -52,13 +54,14 @@ images.forEach((img, i) => {
 
 
 
+// Creare button per cambiare img
 let active = 0;
 document.getElementsByClassName('cont-img')[active].classList.add('active');
 
 const contImg = document.getElementsByClassName('cont-img');
-const butUp = document.querySelector(".but-up");
 
-butUp.addEventListener("click", 
+// passare all'img successiva
+document.querySelector(".but-up").addEventListener("click", 
     function(){
         
         if (active < images.length -1){
@@ -67,18 +70,18 @@ butUp.addEventListener("click",
             contImg[active].classList.add("active");
 
         } else {
-            // ciclo infinito
+            // "ciclo infinito"
             contImg[active].classList.remove("active");
             contImg[active=0].classList.add("active");
         }
     }
 )
 
-const butDown = document.querySelector(".but-down");
-butDown.addEventListener("click", function(){
+// passare all'img precedente
+document.querySelector(".but-down").addEventListener("click", function(){
     
-    if (active == 0) { 
-        // ciclo infinito
+    if (active == 0) {
+        // "ciclo infinito"
         contImg[active].classList.remove("active");
         contImg[active=images.length - 1].classList.add("active");
         
@@ -88,13 +91,4 @@ butDown.addEventListener("click", function(){
         contImg[active].classList.add("active");
     }
 })
-
-
-
-
-
-
-
-
-
 
